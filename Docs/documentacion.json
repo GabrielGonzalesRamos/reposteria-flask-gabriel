@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "309dddf6-28d6-406e-8930-c7b16305efdc",
+		"name": "Repostería",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postres",
+			"item": [
+				{
+					"name": "/postres",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Tacacho\",\n    \"porcion\": \"Personal\"\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/postres/<id>",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/postres/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postres",
+								"4"
+							]
+						},
+						"description": "Endpoint que devuelve todos los postres"
+					},
+					"response": []
+				},
+				{
+					"name": "/postres/<id>",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Tiramizu\", \n    \"porcion\": \"Familiar\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postres/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postres",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/busqueda_postre?nombre=<postre>&porcion=<porcion>\"",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/busqueda_postre?nombre=Tacacho&porcion=Personal",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"busqueda_postre"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Tacacho"
+								},
+								{
+									"key": "porcion",
+									"value": "Personal"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/postres/<id>",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/postres/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postres",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/postres",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/postres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postres"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoint para crear un nuevo postre",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Preparacion",
+			"item": [
+				{
+					"name": "/preparaciones",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orden\": 2,\n    \"descripcion\": \"Segundo paso\",\n    \"postre_id\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preparaciones",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preparaciones"
+							]
+						},
+						"description": "Endpoint para crear una preparacion."
+					},
+					"response": []
+				},
+				{
+					"name": "/preparaciones/<int:id>",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preparaciones/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preparaciones",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ingredientes",
+			"item": [
+				{
+					"name": "/ingredientes",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Escencia de vainilla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/ingredientes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredientes"
+							]
+						},
+						"description": "Endpoint para la creacion de un ingrediente"
+					},
+					"response": []
+				},
+				{
+					"name": "/ingredientes",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredientes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredientes"
+							]
+						},
+						"description": "Endpoint para visualizar todos mis ingredientes"
+					},
+					"response": []
+				},
+				{
+					"name": "/ingredientes/<int:id>",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredientes/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredientes",
+								"1"
+							]
+						},
+						"description": "Endpoint para visualizar mis ingredientes por id"
+					},
+					"response": []
+				},
+				{
+					"name": "/ingredientes/<int:id>",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Huevo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/ingredientes/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "127.0.0.1:5000"
+		}
+	]
+}
