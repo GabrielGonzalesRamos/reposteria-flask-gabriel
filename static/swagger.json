@@ -9,11 +9,10 @@
       "name": "José Gabriel Gonzales Ramos"
     }
   },
-  "host": "127.0.0.1:5000",
+  "host": "reposteria-flask-gabriel.herokuapp.com",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"
